@@ -17,17 +17,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.blue
       ),
-      home: Scaffold(
-        appBar: AppBar(
+      home: home(),
+    );
+  }
+
+
+  home(){
+    return Scaffold(
+      appBar: AppBar(
           title: Text("Hello Flutter")
-        ),
-        body: Container(
-          color: Colors.white
       ),
-        drawer: Container(
+      body: Container(
           color: Colors.red
-        ),
-        floatingActionButton: FloatingActionButton(onPressed: (){}),
       ),
     );
   }
