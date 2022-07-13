@@ -30,10 +30,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("Hello Flutter")
+          title: Text("Hello Flutter"),
+        centerTitle: true,
       ),
       body: Container(
-          color: Colors.black38
+          color: Colors.white,
+          child: Text("Hello world")
       ),
     );
   }
