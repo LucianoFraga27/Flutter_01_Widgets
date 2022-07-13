@@ -35,7 +35,9 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
           color: Colors.white,
-          child: Text("Hello world")
+          child: Center(
+            child: Text('Hello world'),
+          ),
       ),
     );
   }
