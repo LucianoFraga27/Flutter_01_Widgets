@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,9 +17,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.blue
       ),
-      home: Container(
-        color: Colors.red
-      )
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Hello Flutter")
+        ),
+        body: Container(
+          color: Colors.white
+      ),
+        drawer: Container(
+          color: Colors.red
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: (){}),
+      ),
     );
   }
 }
