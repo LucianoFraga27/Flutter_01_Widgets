@@ -1,3 +1,7 @@
+# Sobre projeto: 
+
+# Anotações das Aulas
+
 # aula_01
 
 MaterialApp() -> widget criado apenas uma vez
@@ -24,5 +28,27 @@ Organizando código
 
 # Aula 05
 
+Trabalhando com imagens
+Criar pasta 'assets' depois criar 'images'
 
+Image.network("link");
 
+Em pubspec.yaml
+assets:
+- assets/images/
+
+Image.asset(
+"assets/images/dog2.jpg",
+width: 300,
+height: 300,
+fit: BoxFit.contain
+// contain: melhor possivel no tamanho
+// fill: estica a imagem
+// cover: completa com recorte
+);
+
+SizedBox.expand(
+child: _img()
+) -> Se a imagem quiser | fit: BoxFit.cover
+
+# Aula 06
