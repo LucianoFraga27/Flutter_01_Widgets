@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Center(
-        child: _img()
+        child: _button()
       )
     );
   }
@@ -38,6 +38,22 @@ class HomePage extends StatelessWidget {
         decorationStyle: TextDecorationStyle.wavy, //Pontilhado
       ),
     );
+  }
+
+  _button(){
+    return RaisedButton(
+      color: Colors.amber,
+      child: Text("OK", style:
+      TextStyle(
+        color: Colors.blue,
+        fontSize: 30
+      )),
+      onPressed: () => _onClickOk()
+    );
+  }
+
+  void _onClickOk(){
+    print('Clicou!');
   }
 
   _img() {

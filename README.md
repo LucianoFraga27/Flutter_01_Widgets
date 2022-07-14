@@ -52,3 +52,22 @@ child: _img()
 ) -> Se a imagem quiser | fit: BoxFit.cover
 
 # Aula 06
+
+Botões
+
+_button(){
+return RaisedButton(
+color: Colors.amber,
+child: Text("OK", style:
+TextStyle(
+color: Colors.blue,
+fontSize: 30
+)),
+onPressed: () => _onClickOk()
+);
+}
+
+void _onClickOk(){print('clicou')}
+
+# Aula 07
+
