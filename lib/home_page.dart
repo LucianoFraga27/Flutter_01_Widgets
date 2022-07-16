@@ -17,18 +17,13 @@ class HomePage extends StatelessWidget {
 
   _body(context) {
 
-    Size size = MediaQuery.of(context).size;
-
     return Container(
-      height:size.height, // preenchendo a tela
       color: Colors.red,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center, // eixo principal
-        crossAxisAlignment: CrossAxisAlignment.center, //eixo cruzado | padrao center
-        mainAxisSize: MainAxisSize.max,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _button(),
-          _button(),
+          _text(),
+          _img(),
           _button()
         ],
       )
@@ -40,7 +35,7 @@ class HomePage extends StatelessWidget {
       'Hello world',
       style: TextStyle(
         fontSize: 30,
-        color: Colors.red,
+        color: Colors.white,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
         decoration: TextDecoration.underline,
@@ -69,7 +64,7 @@ class HomePage extends StatelessWidget {
 
   _img() {
     return Image.asset(
-        "assets/images/dog2.jpg",
+        "assets/images/dog1.jpg",
     );
   }
 }
