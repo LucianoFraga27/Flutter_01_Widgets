@@ -105,7 +105,7 @@ img2,...
 # Aula 10
 
 Margem
-Only: definri os lugares
+Only: definir os lugares
 All: em todos os lados (20)
 margin: EdgeInsets.only(top: 20, left: 20)
 top, bottom, left, right
@@ -114,3 +114,7 @@ Padding
 padding: const EdgeInsets.all(10)
 
 # Aula 11
+
+SingleChildScrollView()
+
+Adicionando rolagem na tela

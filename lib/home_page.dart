@@ -17,9 +17,7 @@ class HomePage extends StatelessWidget {
 
   _body() {
 
-    return Container(
-      color: Colors.green,
-      padding: const EdgeInsets.all(10),
+    return SingleChildScrollView(
       child: Container(
         color: Colors.red,
         child: Column(
@@ -27,7 +25,7 @@ class HomePage extends StatelessWidget {
           children: [
             _text(),
             _pageview(),
-            _buttons()
+            _buttons(),
           ],
         )
       ),
