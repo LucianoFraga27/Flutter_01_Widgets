@@ -18,10 +18,10 @@ class HomePage extends StatelessWidget {
   _body() {
     return Container(
       color: Colors.red,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center, // Centralizando valores dentro da coluna
-        // mainAxisAlignment: MainAxisAlignment.end, // Ponto os valores no fim da coluna
-        // mainAxisAlignment: MainAxisAlignment.start, // Ponto os valores no inicio da coluna
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center, // Centralizando valores dentro da linha
+        // mainAxisAlignment: MainAxisAlignment.end, // Ponto os valores no fim da linha
+        // mainAxisAlignment: MainAxisAlignment.start, // Ponto os valores no inicio da linha
         mainAxisSize: MainAxisSize.max,
         children: [
           _button(),
