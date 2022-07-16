@@ -11,17 +11,20 @@ class HomePage extends StatelessWidget {
         title: Text("Hello Flutter"),
         centerTitle: true,
       ),
-      body: _body(),
+      body: _body(context),
     );
   }
 
-  _body() {
+  _body(context) {
+
+    Size size = MediaQuery.of(context).size;
+
     return Container(
+      height:size.height, // preenchendo a tela
       color: Colors.red,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center, // Centralizando valores dentro da linha
-        // mainAxisAlignment: MainAxisAlignment.end, // Ponto os valores no fim da linha
-        // mainAxisAlignment: MainAxisAlignment.start, // Ponto os valores no inicio da linha
+        mainAxisAlignment: MainAxisAlignment.center, // eixo principal
+        crossAxisAlignment: CrossAxisAlignment.center, //eixo cruzado | padrao center
         mainAxisSize: MainAxisSize.max,
         children: [
           _button(),

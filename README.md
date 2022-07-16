@@ -84,3 +84,12 @@ item
 
 # Aula 08
 
+Pegando o tamanho da tela
+
+Size size = MediaQuery.of(context).size;
+
+crossAxisAlignment: CrossAxisAlignment.center, //eixo cruzado | padrao center
+.start / .end 
+
+# Aula 09
+
