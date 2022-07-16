@@ -24,7 +24,26 @@ class HomePage extends StatelessWidget {
         children: [
           _text(),
           _img(),
-          _button()
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _button(),
+                  _button(),
+                  _button()
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _button(),
+                  _button(),
+                  _button()
+                ],
+              )
+            ],
+          )
         ],
       )
     );
