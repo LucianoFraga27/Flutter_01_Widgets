@@ -11,27 +11,32 @@ class HomePage extends StatelessWidget {
         title: Text("Hello Flutter"),
         centerTitle: true,
       ),
-      body: _body(context),
+      body: _body(),
     );
   }
 
-  _body(context) {
+  _body() {
 
     return Container(
-      color: Colors.red,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _text(),
-          _pageview(),
-          _buttons()
-        ],
-      )
+      color: Colors.green,
+      padding: const EdgeInsets.all(10),
+      child: Container(
+        color: Colors.red,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _text(),
+            _pageview(),
+            _buttons()
+          ],
+        )
+      ),
     );
   }
 
   Container _pageview() {
     return Container(
+          margin: EdgeInsets.all(10),
           height: 300,
           child: PageView(
             children: [
@@ -104,6 +109,7 @@ class HomePage extends StatelessWidget {
   _img(String img_name) {
     return Image.asset(
         img_name,
+        fit: BoxFit.cover
     );
   }
 }

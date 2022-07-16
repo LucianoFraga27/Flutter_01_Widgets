@@ -93,4 +93,24 @@ crossAxisAlignment: CrossAxisAlignment.center, //eixo cruzado | padrao center
 
 # Aula 09
 
-Pageview
+Carrossel de imagens
+
+Pageview(
+children:[
+img1,
+img2,...
+]
+)
+
+# Aula 10
+
+Margem
+Only: definri os lugares
+All: em todos os lados (20)
+margin: EdgeInsets.only(top: 20, left: 20)
+top, bottom, left, right
+
+Padding
+padding: const EdgeInsets.all(10)
+
+# Aula 11
