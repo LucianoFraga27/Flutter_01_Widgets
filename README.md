@@ -72,3 +72,12 @@ void _onClickOk(){print('clicou')}
 # Aula 07
 
 Colunas e linhas
+
+Column/Row(
+mainAxisSize: MainAxisSize.min // Para ter apenas o tamanho necessario, por padrão essa função recebe Max
+children: [
+item,
+item,
+item
+]
+)
