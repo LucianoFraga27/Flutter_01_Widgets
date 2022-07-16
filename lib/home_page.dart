@@ -23,11 +23,26 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _text(),
-          _img(),
+          _pageview(),
           _buttons()
         ],
       )
     );
+  }
+
+  Container _pageview() {
+    return Container(
+          height: 300,
+          child: PageView(
+            children: [
+              _img("assets/images/dog1.jpg"),
+              _img("assets/images/dog2.jpg"),
+              _img("assets/images/dog3.jpg"),
+              _img("assets/images/dog4.jpg"),
+              _img("assets/images/dog5.jpg")
+            ],
+          ),
+        );
   }
 
   _buttons() {
@@ -86,9 +101,9 @@ class HomePage extends StatelessWidget {
     print('Clicou!');
   }
 
-  _img() {
+  _img(String img_name) {
     return Image.asset(
-        "assets/images/dog1.jpg",
+        img_name,
     );
   }
 }
