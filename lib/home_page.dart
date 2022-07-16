@@ -11,13 +11,15 @@ class HomePage extends StatelessWidget {
         title: Text("Hello Flutter"),
         centerTitle: true,
       ),
-      body: _body(),
+      body: _body(context),
     );
   }
 
-  _body() {
+  _body(BuildContext context) {
 
-    return SingleChildScrollView(
+    return Container(
+      color: Colors.green,
+      padding: const EdgeInsets.all(10),
       child: Container(
         color: Colors.red,
         child: Column(
@@ -25,7 +27,7 @@ class HomePage extends StatelessWidget {
           children: [
             _text(),
             _pageview(),
-            _buttons(),
+            _buttons(context),
           ],
         )
       ),
@@ -48,23 +50,23 @@ class HomePage extends StatelessWidget {
         );
   }
 
-  _buttons() {
+  _buttons(BuildContext context) {
     return Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _button("ListView"),
-                _button("Page 2"),
-                _button("Page 3")
+                _button(context,"ListView"),
+                _button(context,"Page 2"),
+                _button(context,"Page 3")
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _button("Snack"),
-                _button("Dialog"),
-                _button("Toast")
+                _button(context,"Snack"),
+                _button(context,"Dialog"),
+                _button(context,"Toast")
               ],
             )
           ],
@@ -87,7 +89,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _button(String texto){
+  _button(BuildContext context,String texto){
     return RaisedButton(
       color: Colors.amber,
       child: Text(
@@ -96,12 +98,12 @@ class HomePage extends StatelessWidget {
         color: Colors.blue,
         fontSize: 25
       )),
-      onPressed: () => _onClickOk()
+      onPressed: () => _onClickOk(context)
     );
   }
 
-  void _onClickOk(){
-    print('Clicou!');
+  void _onClickOk(BuildContext context){
+    Navigator.push(context, route);
   }
 
   _img(String img_name) {
