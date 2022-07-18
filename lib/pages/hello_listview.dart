@@ -15,18 +15,22 @@ class HelloListView extends StatelessWidget {
 }
 
  _body() {
+
+  List<Widget> imgs = [
+    _img("assets/images/dog1.jpg"),
+    _img("assets/images/dog2.jpg"),
+    _img("assets/images/dog3.jpg"),
+    _img("assets/images/dog4.jpg"),
+    _img("assets/images/dog5.jpg")
+  ];
+
   return ListView(
     itemExtent: 300,
-    children: [
-      _img("assets/images/dog1.jpg"),
-      _img("assets/images/dog2.jpg"),
-      _img("assets/images/dog3.jpg"),
-      _img("assets/images/dog4.jpg"),
-      _img("assets/images/dog5.jpg")
-    ],
+    children: imgs
   );
 }
-_img(String img_name) {
+
+Image _img(String img_name) {
   return Image.asset(
       img_name,
       fit: BoxFit.cover,
