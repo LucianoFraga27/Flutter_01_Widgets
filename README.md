@@ -164,6 +164,14 @@ return imgs[index];
 
 # Aula 15
 
+Stack: sobre por um item no outro
 
+return Stack(
+    children:[
+    imgs[index],
+    Container(
+        aligment: Aligment.topCenter // Alinhamento do texto no STACK
+        img_nome
+)])
 
-
+# Aula 16
