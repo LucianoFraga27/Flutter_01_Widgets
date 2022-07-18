@@ -2,6 +2,7 @@
 import 'package:aula_01/pages/hello_page1.dart';
 import 'package:aula_01/pages/hello_page2.dart';
 import 'package:aula_01/pages/hello_page3.dart';
+import 'package:aula_01/widgets/blue_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -83,33 +84,21 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _button(context,"ListView",() => _onClickNavigator(context,HelloPage1())),
-                _button(context,"Page 2", () => _onClickNavigator(context,HelloPage2())),
-                _button(context,"Page 3", () => _onClickNavigator(context,HelloPage3()))
+                BlueButton("ListView",() => _onClickNavigator(context,HelloPage1())),
+                BlueButton("Page 2", () => _onClickNavigator(context,HelloPage2())),
+                BlueButton("Page 3", () => _onClickNavigator(context,HelloPage3()))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _button(context,"Snack", _OnClickSnack),
-                _button(context,"Dialog",_OnClickDialog),
-                _button(context,"Toast", _OnClickToast)
+                BlueButton("Snack", _OnClickSnack),
+                BlueButton("Dialog",_OnClickDialog),
+                BlueButton("Toast", _OnClickToast)
               ],
             )
           ],
         );
-  }
-  _button(BuildContext context,String texto, Function onPressed){
-    return RaisedButton(
-      color: Colors.amber,
-      child: Text(
-          texto,
-          style: TextStyle(
-        color: Colors.blue,
-        fontSize: 25
-      )),
-      onPressed: () => onPressed()
-    );
   }
 
   void _onClickNavigator(BuildContext context, Widget page) async{
