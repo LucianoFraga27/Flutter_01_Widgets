@@ -20,8 +20,9 @@ class HelloPage2 extends StatelessWidget {
     return Center(
       child: BlueButton(
           "Voltar",
-          () => _onClickVoltar(context)),
-    );
+          onPressed: () => _onClickVoltar(context),
+          cor: Colors.red,
+    ));
   }
 
   _onClickVoltar(context) {

@@ -20,7 +20,7 @@ _body(context) {
   return Center(
     child: BlueButton(
             "Voltar",
-            () => _onClickVoltar(context)),
+            onPressed: () => _onClickVoltar(context)),
   );
 }
 
