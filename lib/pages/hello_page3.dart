@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utilis/nav.dart';
 import '../widgets/blue_button.dart';
 
 class HelloPage3 extends StatelessWidget {
@@ -25,7 +26,7 @@ _body(context) {
 }
 
 _onClickVoltar(context) {
-  return Navigator.pop(context, "voltou 3");
+  return pop(context, "voltou 3");
 }
 
 }
