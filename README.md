@@ -136,3 +136,28 @@ return HelloPage1();
 
 
 # Aula 13
+
+Quando quero dividir minha tela em componentes
+para que não ocorra erro, é melhor utilizar Expanded()
+
+Expanded(
+flex: 1,
+child: PageView(),
+)
+
+# Aula 14
+
+Lista
+
+ListView(
+itemExtent: 100, //define o tamanho de cada item na sua lista
+children : 
+[
+item,
+item
+])
+
+
+
+
+

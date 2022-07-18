@@ -16,6 +16,7 @@ class HelloListView extends StatelessWidget {
 
  _body() {
   return ListView(
+    itemExtent: 300,
     children: [
       _img("assets/images/dog1.jpg"),
       _img("assets/images/dog2.jpg"),
@@ -28,6 +29,6 @@ class HelloListView extends StatelessWidget {
 _img(String img_name) {
   return Image.asset(
       img_name,
-      fit: BoxFit.cover
+      fit: BoxFit.cover,
   );
 }
