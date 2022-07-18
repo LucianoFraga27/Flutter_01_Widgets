@@ -157,6 +157,11 @@ item,
 item
 ])
 
+ListView.builder(
+itemCount: imgs.lenght,
+item.Builder: (context, index),
+return imgs[index];
+
 # Aula 15
 
 

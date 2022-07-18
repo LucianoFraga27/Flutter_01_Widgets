@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+class Dog{
+  String nome;
+  String foto;
+
+  Dog(this.nome, this.foto);
+
+}
+
+
 class HelloListView extends StatelessWidget {
   const HelloListView({Key? key}) : super(key: key);
 
@@ -15,18 +24,21 @@ class HelloListView extends StatelessWidget {
 }
 
  _body() {
+  List<Dog> dogs = [
+    new Dog("nome1","assets/images/dog1.jpg"),
+    new Dog("nome2","assets/images/dog2.jpg"),
+    new Dog("nome3","assets/images/dog3.jpg"),
+    Dog("nome4","assets/images/dog4.jpg"),
+    Dog("nome5","assets/images/dog5.jpg"),
+   ];
 
-  List<Widget> imgs = [
-    _img("assets/images/dog1.jpg"),
-    _img("assets/images/dog2.jpg"),
-    _img("assets/images/dog3.jpg"),
-    _img("assets/images/dog4.jpg"),
-    _img("assets/images/dog5.jpg")
-  ];
-
-  return ListView(
-    itemExtent: 300,
-    children: imgs
+  return ListView.builder(
+      itemExtent: 300,
+      itemCount: dogs.length, //tamanho da lista
+      itemBuilder: (BuildContext context, int index){
+        Dog dog = dogs[index];
+        return _img(dog.foto);
+    }
   );
 }
 
