@@ -170,7 +170,7 @@ return Stack(
     children:[
     imgs[index],
     Container(
-        aligment: Aligment.topCenter // Alinhamento do texto no STACK
+        alignment: Alignment.topCenter // Alinhamento do texto no STACK
         img_nome
 )])
 
