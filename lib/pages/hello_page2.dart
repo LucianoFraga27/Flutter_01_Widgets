@@ -25,7 +25,7 @@ class HelloPage2 extends StatelessWidget {
   }
 
   _onClickVoltar(context) {
-    return Navigator.pop(context);
+    return Navigator.pop(context, "voltou 2");
   }
 
 }
