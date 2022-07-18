@@ -1,5 +1,7 @@
 
 import 'package:aula_01/pages/hello_page1.dart';
+import 'package:aula_01/pages/hello_page2.dart';
+import 'package:aula_01/pages/hello_page3.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,6 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.greenAccent,
         title: Text("Hello Flutter"),
         centerTitle: true,
       ),
@@ -51,27 +54,11 @@ class HomePage extends StatelessWidget {
         );
   }
 
-  _buttons(BuildContext context) {
-    return Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _button(context,"ListView"),
-                _button(context,"Page 2"),
-                _button(context,"Page 3")
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _button(context,"Snack"),
-                _button(context,"Dialog"),
-                _button(context,"Toast")
-              ],
-            )
-          ],
-        );
+  _img(String img_name) {
+    return Image.asset(
+        img_name,
+        fit: BoxFit.cover
+    );
   }
 
   Text _text() {
@@ -90,7 +77,29 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _button(BuildContext context,String texto){
+  _buttons(BuildContext context) {
+    return Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _button(context,"ListView",() => _onClickNavigator(context,HelloPage1())),
+                _button(context,"Page 2", () => _onClickNavigator(context,HelloPage2())),
+                _button(context,"Page 3", () => _onClickNavigator(context,HelloPage3()))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _button(context,"Snack", _OnClickSnack),
+                _button(context,"Dialog",_OnClickDialog),
+                _button(context,"Toast", _OnClickToast)
+              ],
+            )
+          ],
+        );
+  }
+  _button(BuildContext context,String texto, Function onPressed){
     return RaisedButton(
       color: Colors.amber,
       child: Text(
@@ -99,20 +108,24 @@ class HomePage extends StatelessWidget {
         color: Colors.blue,
         fontSize: 25
       )),
-      onPressed: () => _onClickOk(context)
+      onPressed: () => onPressed()
     );
   }
 
-  void _onClickOk(BuildContext context){
+  void _onClickNavigator(BuildContext context, Widget page){
     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-      return HelloPage1();
+      return page;
     }));
   }
 
-  _img(String img_name) {
-    return Image.asset(
-        img_name,
-        fit: BoxFit.cover
-    );
+  _OnClickSnack() {
   }
+
+  _OnClickToast() {
+
+  }
+
+  _OnClickDialog() {
+  }
+
 }

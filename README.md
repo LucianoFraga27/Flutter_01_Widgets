@@ -124,4 +124,15 @@ Adicionando rolagem na tela
 
 Navegação em telas
 
+void _onClickOk(BuildContext context){
+Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+return HelloPage1();
+}));
+
 1- Passar o parametro context
+2- Passar o builder
+3 - retornar a pagaina dentro do builder
+
+
+
+# Aula 13
