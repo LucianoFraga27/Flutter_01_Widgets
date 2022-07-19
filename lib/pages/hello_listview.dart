@@ -32,8 +32,8 @@ class HelloListView extends StatelessWidget {
     Dog("nome5","assets/images/dog5.jpg"),
    ];
 
-  return ListView.builder(
-      itemExtent: 300,
+  return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemCount: dogs.length, //tamanho da lista
       itemBuilder: (BuildContext context, int index){
         Dog dog = dogs[index];

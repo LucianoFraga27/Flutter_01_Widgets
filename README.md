@@ -187,3 +187,8 @@ borderRadius: BorderRadius.circular(),
 )
 
 # Aula 17
+GridView
+
+GridView.builder(
+gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),//Numero de colunas
+)
