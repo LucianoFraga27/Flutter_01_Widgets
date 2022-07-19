@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               BlueButton("Snack", onPressed: () => _OnClickSnack(context)),
-              BlueButton("Dialog", onPressed: () => _OnClickDialog),
+              BlueButton("Dialog", onPressed: () => _OnClickDialog(context)),
               BlueButton("Toast", onPressed: () => _OnClickToast)
             ],
           )
@@ -110,16 +110,34 @@ class HomePage extends StatelessWidget {
 
   _OnClickSnack(BuildContext context) {
     Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text('Olá flutter'),
-      action: SnackBarAction(
-        textColor: Colors.red,
-        label:'OK',onPressed: (){
-        print('Ok');
-      },)
+        content: Text('Olá flutter'),
+        action: SnackBarAction(
+          textColor: Colors.red,
+          label: 'OK', onPressed: () {
+          print('Ok');
+        },)
     ));
   }
 
+  _OnClickDialog(BuildContext context) {
+    showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: Text('Flutter é legal'),
+        actions: [
+          FlatButton(child: Text('Cancelar!'),
+              onPressed: () {
+               pop(context, 'Cancelar!');
+              }),
+          FlatButton(child: Text('Ok!'),
+              onPressed: () {
+                pop(context, 'Ok!');
+              }),
+        ],
+      );
+    });
+  }
+
+
   _OnClickToast() {}
 
-  _OnClickDialog() {}
 }

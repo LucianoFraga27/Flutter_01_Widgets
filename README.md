@@ -237,3 +237,31 @@ print('Ok');
 
 # Aula 21
 
+Alertas / Cancelar e Confirmar 
+
+Dialog
+
+_OnClickDialog(BuildContext context) {
+showDialog(context: context, builder: (context) {
+return AlertDialog(
+title: Text('Flutter é legal'),
+actions: [
+FlatButton(child: Text('Cancelar!'),
+onPressed: () {
+pop(context, 'Cancelar!');
+}),
+FlatButton(child: Text('Ok!'),
+onPressed: () {
+pop(context, 'Ok!');
+}),
+],
+);
+});
+}
+
+# Aula 22 
+
+Alertas / 
+
+Toast
+
