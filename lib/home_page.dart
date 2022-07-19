@@ -5,6 +5,7 @@ import 'package:aula_01/pages/hello_page3.dart';
 import 'package:aula_01/utilis/nav.dart';
 import 'package:aula_01/widgets/blue_button.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -138,6 +139,16 @@ class HomePage extends StatelessWidget {
   }
 
 
-  _OnClickToast() {}
+  _OnClickToast() {
+    Fluttertoast.showToast(
+        msg: "Flutter é legal",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+  }
 
 }

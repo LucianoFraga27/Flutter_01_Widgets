@@ -1,5 +1,9 @@
 # Sobre projeto: 
 
+Aprender sobre os Widgets 
+
+
+
 # Anotações das Aulas
 
 # aula_01
@@ -265,3 +269,11 @@ Alertas /
 
 Toast
 
+1- instalar plugin dart
+-> pub.dev
+-> toast
+-> fluttertoast
+-> copia dependencia e coloca no arquivo pubspec.yaml
+-> reinicia aplicação
+-> importa o fluttertoast
+-> coloca o codigo de exemplo do site
