@@ -5,12 +5,17 @@ class Dog{
   String foto;
 
   Dog(this.nome, this.foto);
-
 }
 
+class HelloListView extends StatefulWidget {
 
-class HelloListView extends StatelessWidget {
-  const HelloListView({Key? key}) : super(key: key);
+  @override
+  State<HelloListView> createState() => _HelloListViewState();
+}
+
+class _HelloListViewState extends State<HelloListView> {
+
+  bool gridView = true;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +26,13 @@ class HelloListView extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.list),onPressed: () {
               print('Lista');
+              gridView = false;
           },
           ),
           IconButton(
             icon: Icon(Icons.grid_on),onPressed: () {
             print('Grid');
+            gridView = true;
           },
           )
         ],
