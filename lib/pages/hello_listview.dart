@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../utilis/nav.dart';
+import 'dog_page.dart';
+
 class Dog{
   String nome;
   String foto;
@@ -98,6 +101,11 @@ class _HelloListViewState extends State<HelloListView> {
             ),
           ),
         ),
+        GestureDetector(
+          onTap: () {
+            push(context, DogPage(dog));
+          },
+        )
       ],
     );
   }
