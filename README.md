@@ -175,3 +175,15 @@ return Stack(
 )])
 
 # Aula 16
+
+decoration
+decorando container
+
+container(
+decoration: BoxDecoration(
+color:,
+borderRadius: BorderRadius.circular(),
+)
+)
+
+# Aula 17
