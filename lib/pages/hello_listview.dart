@@ -16,7 +16,19 @@ class HelloListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListView')
+        title: Text('ListView'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.list),onPressed: () {
+              print('Lista');
+          },
+          ),
+          IconButton(
+            icon: Icon(Icons.grid_on),onPressed: () {
+            print('Grid');
+          },
+          )
+        ],
       ),
       body: _body(),
     );

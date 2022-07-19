@@ -192,3 +192,17 @@ GridView
 GridView.builder(
 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),//Numero de colunas
 )
+
+# Aula 18
+
+Botões com ações na APPBAR
+
+actions: [
+IconButton(
+icon: Icon(Icons.list),onPressed: () {
+print('Lista');
+},
+),
+
+# Aula 19
+
