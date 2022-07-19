@@ -206,3 +206,34 @@ print('Lista');
 
 # Aula 19
 
+Clicar na foto e enviar a foto como parametro
+Por dentro do array children junto a imagem
+
+GestureDetector(
+onTap: () {
+push(context, DogPage(dog));
+},
+)
+
+# Aula 20
+
+Alertas
+
+Snack
+
+Cria um builder em _buttons para enviar o context
+
+_OnClickSnack(BuildContext context) {
+Scaffold.of(context).showSnackBar(SnackBar(
+content: Text('Olá flutter'),
+action: SnackBarAction(
+textColor: Colors.red,
+label:'OK',onPressed: (){
+print('Ok');
+},)
+));
+}
+
+
+# Aula 21
+

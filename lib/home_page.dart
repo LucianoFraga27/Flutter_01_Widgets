@@ -1,4 +1,3 @@
-
 import 'package:aula_01/pages/hello_listview.dart';
 import 'package:aula_01/pages/hello_page1.dart';
 import 'package:aula_01/pages/hello_page2.dart';
@@ -23,45 +22,40 @@ class HomePage extends StatelessWidget {
   }
 
   _body(BuildContext context) {
-
     return Container(
       color: Colors.green,
       padding: const EdgeInsets.all(10),
       child: Container(
-        color: Colors.red,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _text(),
-            _pageview(),
-            _buttons(context),
-          ],
-        )
-      ),
+          color: Colors.red,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _text(),
+              _pageview(),
+              _buttons(),
+            ],
+          )),
     );
   }
 
   Container _pageview() {
     return Container(
-          margin: EdgeInsets.all(10),
-          height: 300,
-          child: PageView(
-            children: [
-              _img("assets/images/dog1.jpg"),
-              _img("assets/images/dog2.jpg"),
-              _img("assets/images/dog3.jpg"),
-              _img("assets/images/dog4.jpg"),
-              _img("assets/images/dog5.jpg")
-            ],
-          ),
-        );
+      margin: EdgeInsets.all(10),
+      height: 300,
+      child: PageView(
+        children: [
+          _img("assets/images/dog1.jpg"),
+          _img("assets/images/dog2.jpg"),
+          _img("assets/images/dog3.jpg"),
+          _img("assets/images/dog4.jpg"),
+          _img("assets/images/dog5.jpg")
+        ],
+      ),
+    );
   }
 
   _img(String img_name) {
-    return Image.asset(
-        img_name,
-        fit: BoxFit.cover
-    );
+    return Image.asset(img_name, fit: BoxFit.cover);
   }
 
   Text _text() {
@@ -80,43 +74,52 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _buttons(BuildContext context) {
-    return Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                BlueButton("ListView",onPressed: () => _onClickNavigator(context,HelloListView())),
-                BlueButton("Page 2", onPressed: () => _onClickNavigator(context,HelloPage2())),
-                BlueButton("Page 3", onPressed: () => _onClickNavigator(context,HelloPage3()))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                BlueButton("Snack", onPressed: () => _OnClickSnack),
-                BlueButton("Dialog",onPressed: () =>_OnClickDialog),
-                BlueButton("Toast", onPressed: () =>_OnClickToast)
-              ],
-            )
-          ],
-        );
+  _buttons() {
+    return Builder(builder: (BuildContext context) {
+      return Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              BlueButton("ListView",
+                  onPressed: () => _onClickNavigator(context, HelloListView())),
+              BlueButton("Page 2",
+                  onPressed: () => _onClickNavigator(context, HelloPage2())),
+              BlueButton("Page 3",
+                  onPressed: () => _onClickNavigator(context, HelloPage3()))
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              BlueButton("Snack", onPressed: () => _OnClickSnack(context)),
+              BlueButton("Dialog", onPressed: () => _OnClickDialog),
+              BlueButton("Toast", onPressed: () => _OnClickToast)
+            ],
+          )
+        ],
+      );
+    });
   }
 
-  void _onClickNavigator(BuildContext context, Widget page) async{
+  void _onClickNavigator(BuildContext context, Widget page) async {
     String s = await push(context, page);
 
     print(">> $s");
   }
 
-  _OnClickSnack() {
+  _OnClickSnack(BuildContext context) {
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text('Olá flutter'),
+      action: SnackBarAction(
+        textColor: Colors.red,
+        label:'OK',onPressed: (){
+        print('Ok');
+      },)
+    ));
   }
 
-  _OnClickToast() {
+  _OnClickToast() {}
 
-  }
-
-  _OnClickDialog() {
-  }
-
+  _OnClickDialog() {}
 }
