@@ -283,3 +283,38 @@ Toast
 Material design
 
 floatingActionButton em Scaffold
+
+Drawer
+
+Drawer(
+child: ListView(
+children: [
+ListTile(
+leading: Icon(Icons.star),
+title: Text('Favoritos'),
+subtitle: Text('Mais informações'),
+trailing: Icon(Icons.arrow_forward),
+onTap:(){
+print('Favoritos');
+Navigator.pop(context);
+}
+)
+],
+)
+);
+
+# Aula 24
+
+User Drawer
+
+UserAccountsDrawerHeader(
+accountName: Text('Luciano'),
+accountEmail: Text('luciano@gmai.com'),
+currentAccountPicture: CircleAvatar(
+backgroundImage: AssetImage(
+"assets/images/dog1.jpg"
+),
+),),
+
+# Aula 25
+

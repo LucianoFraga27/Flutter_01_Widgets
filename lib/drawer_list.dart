@@ -11,6 +11,14 @@ class DrawerList extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
+          UserAccountsDrawerHeader(
+              accountName: Text('Luciano'),
+              accountEmail: Text('luciano@gmai.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage(
+                  "assets/images/dog1.jpg"
+                ),
+              ),),
           ListTile(
             leading: Icon(Icons.star),
             title: Text('Favoritos'),
@@ -20,9 +28,19 @@ class DrawerList extends StatelessWidget {
               print('Favoritos');
               Navigator.pop(context);
             }
-          )
+          ),
+          ListTile(
+              leading: Icon(Icons.link),
+              title: Text('Saiba mais'),
+              subtitle: Text('Mais informações'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap:(){
+                print('Saiba mais');
+                Navigator.pop(context);
+              }
+          ),
         ],
-      )
+      ),
     );
   }
 }
