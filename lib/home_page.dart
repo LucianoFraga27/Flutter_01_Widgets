@@ -14,22 +14,33 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
-        title: Text("Hello Flutter"),
-        centerTitle: true,
-      ),
-      body: _body(context),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){
-          _onClickFab();
-        },
-      ),
-      drawer: DrawerList(
-
-      )
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.greenAccent,
+              title: Text("Hello Flutter"),
+              bottom: TabBar(tabs: [
+                Tab(text: 'Tab1'),
+                Tab(text: 'Tab2'),
+                Tab(text: 'Tab3'),
+              ])),
+          body: TabBarView(
+            children: [
+              _body(context),
+              _body(context),
+              Container(
+                color:Colors.red
+              )
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+              _onClickFab();
+            },
+          ),
+          drawer: DrawerList()),
     );
   }
 
@@ -125,30 +136,34 @@ class HomePage extends StatelessWidget {
         content: Text('Olá flutter'),
         action: SnackBarAction(
           textColor: Colors.red,
-          label: 'OK', onPressed: () {
-          print('Ok');
-        },)
-    ));
+          label: 'OK',
+          onPressed: () {
+            print('Ok');
+          },
+        )));
   }
 
   _OnClickDialog(BuildContext context) {
-    showDialog(context: context, builder: (context) {
-      return AlertDialog(
-        title: Text('Flutter é legal'),
-        actions: [
-          FlatButton(child: Text('Cancelar!'),
-              onPressed: () {
-               pop(context, 'Cancelar!');
-              }),
-          FlatButton(child: Text('Ok!'),
-              onPressed: () {
-                pop(context, 'Ok!');
-              }),
-        ],
-      );
-    });
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Flutter é legal'),
+            actions: [
+              FlatButton(
+                  child: Text('Cancelar!'),
+                  onPressed: () {
+                    pop(context, 'Cancelar!');
+                  }),
+              FlatButton(
+                  child: Text('Ok!'),
+                  onPressed: () {
+                    pop(context, 'Ok!');
+                  }),
+            ],
+          );
+        });
   }
-
 
   _OnClickToast() {
     Fluttertoast.showToast(
@@ -158,12 +173,10 @@ class HomePage extends StatelessWidget {
         timeInSecForIosWeb: 1,
         backgroundColor: Colors.red,
         textColor: Colors.white,
-        fontSize: 16.0
-    );
+        fontSize: 16.0);
   }
 
   void _onClickFab() {
     print("add");
   }
-
 }

@@ -11,14 +11,16 @@ class DrawerList extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          UserAccountsDrawerHeader(
-              accountName: Text('Luciano'),
-              accountEmail: Text('luciano@gmai.com'),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage(
-                  "assets/images/dog1.jpg"
-                ),
-              ),),
+          SafeArea(
+            child: UserAccountsDrawerHeader(
+                accountName: Text('Luciano'),
+                accountEmail: Text('luciano@gmai.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage(
+                    "assets/images/dog1.jpg"
+                  ),
+                ),),
+          ),
           ListTile(
             leading: Icon(Icons.star),
             title: Text('Favoritos'),
