@@ -19,6 +19,12 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: _body(context),
+      floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: (){
+        _onClickFab();
+      },
+      ),
     );
   }
 
@@ -29,7 +35,7 @@ class HomePage extends StatelessWidget {
       child: Container(
           color: Colors.red,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               _text(),
               _pageview(),
@@ -149,6 +155,10 @@ class HomePage extends StatelessWidget {
         textColor: Colors.white,
         fontSize: 16.0
     );
+  }
+
+  void _onClickFab() {
+    print("add");
   }
 
 }
