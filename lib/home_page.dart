@@ -25,8 +25,8 @@ class HomePage extends StatelessWidget {
           _onClickFab();
         },
       ),
-      drawer: Container(
-        color: Colors.yellow
+      drawer: Drawer(
+
       ),
     );
   }
